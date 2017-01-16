@@ -72,7 +72,7 @@
        scene.add(mesh);
        
        
-       camera.position.z = 5;
+       //camera.position.z = 5;
        
        
        var render = function(){
@@ -82,8 +82,8 @@
          mesh.rotation.y += 0.005;
          mesh.rotation.Z += 0.005;
          
-         camera.position.x = Math.sin(mesh.rotation.x);
-         camera.position.y = Math.cos(mesh.rotation.x);
+         camera.position.x = 5 * Math.sin(mesh.rotation.x);
+         camera.position.z = 5 * Math.cos(mesh.rotation.x);
          
          renderer.render(scene,camera);
        };
