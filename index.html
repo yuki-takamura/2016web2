@@ -15,7 +15,7 @@
      <script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r81/three.min.js"></script>
      <script type ="text/javascript">
        var scene = new THREE.Scene();
-       var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight , 0.1, 1000);
+       var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight , 0.1, 10000);
        
        var renderer = new THREE.WebGLRenderer();
        renderer.setSize(window.innerWidth,window.innerHeight);
@@ -36,7 +36,7 @@
        scene.add(new THREE.AmbientLight(0x333333));
        
        var loader = new THREE.TextureLoader();
-       var geometry = new THREE.BoxGeometry(2,4,2);
+       var geometry = new THREE.BoxGeometry(2,2,2);
        var material = new THREE.MeshStandardMaterial({
          color:0xccffcc,
          map:loader.load('texture.png')});
