@@ -9,6 +9,8 @@
     </style>
   </head>
   
+  <script src ="three/three.js"></script>   
+  
   <body>
      <script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r81/three.min.js"></script>
      <script type ="text/javascript">
@@ -18,6 +20,11 @@
        var renderer = new THREE.WebGLRenderer();
        renderer.setSize(window.innerWidth,window.innerHeight);
        document.body.appendChild(renderer.domElement);
+       
+       var pointLight = new THREE.PointLight(0xffffff, 2, 1500);
+       pointLight.position.set(0, 1000, -100);
+       pointLightHelper = new THREE.PointLightHelper(pointLight, 1);
+       scene.add(pointLight);
        
        var light = new THREE.DirectionalLight(0xcccccc);
        light.position.set(30,10,30);
