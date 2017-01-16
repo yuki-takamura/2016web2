@@ -26,6 +26,11 @@
        pointLightHelper = new THREE.PointLightHelper(pointLight, 1);
        scene.add(pointLight);
        
+       var pointLight2 = new THREE.PointLight(0xffff00, 2, 1500);
+       pointLight.position2.set(30, -10, 30);
+       pointLightHelper = new THREE.PointLightHelper(pointLight2, 1);
+       scene.add(pointLight2);
+       
        var light = new THREE.DirectionalLight(0xcccccc);
        light.position.set(30,10,30);
        scene.add(light);
