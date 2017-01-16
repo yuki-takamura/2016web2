@@ -82,8 +82,8 @@
          mesh.rotation.y += 0.005;
          mesh.rotation.Z += 0.005;
          
-         camera.position.x = Math.sin(mesh.rotation.x);
-         camera.position.z = Math.cos(mesh.rotation.x);
+         camera.position.x = 2 * Math.sin(mesh.rotation.x);
+         camera.position.z = 2 * Math.cos(mesh.rotation.x);
          
          renderer.render(scene,camera);
        };
