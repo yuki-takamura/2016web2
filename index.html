@@ -12,7 +12,7 @@
   </head>
   
   <script src ="three/three.js"></script>   
-  
+  <script src = "OrbitControls.js"></script>
   <body>
      <script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r81/three.min.js"></script>
      <script type ="text/javascript">
@@ -20,6 +20,9 @@
        var scene = new THREE.Scene();
         //scene.fog = new THREE.FoxExp2(0x000000, 0.015);
        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight , 0.1, 10000);
+       camera.up.x = 0;
+       camera.up.y = 0;
+       camera.up.z = -1;
        
        var renderer = new THREE.WebGLRenderer();
        renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
@@ -81,6 +84,7 @@
        scene.add(mesh);
       
        camera.position.z = 5;
+       var controls = new THREE.OrbitControls(camera);
        
        var render = function(){
          requestAnimationFrame(render);
@@ -93,6 +97,8 @@
          
          camera.position.x = 2 *Math.sin(mesh.rotation.x);
          camera.position.y = 2 *Math.cos(mesh.rotation.x);
+         
+         controls.update();
          
          renderer.render(scene,camera);
        };
