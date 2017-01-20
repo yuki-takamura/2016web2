@@ -25,14 +25,7 @@
        var renderer = new THREE.WebGLRenderer();
        renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
        document.body.appendChild(renderer.domElement);
-       
-       var stats;
-       stats = new Stats();
-       stats.domElement.style.position = 'absolute';
-       stats.domElement.style.top = '0px';
-       stats.domElement.style.zIndex = 100;
-       document.body.appendChild(stats.domElement);
-       
+      
        //var controls = new THREE.OrbitControls(camera);
        
        var axis = new THREE.AxisHelper(400);
