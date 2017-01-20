@@ -34,21 +34,11 @@
        renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
        document.body.appendChild(renderer.domElement);
        
-       var camera control;
-       function initDeugMode()
-       {
-         var axis;
-         camera control = new THREE.OrbitControls(camera,canvas);
-         axis = new THREE.AxisHelper(500);
-         axis.position.set(0,0,0);
-         scene.add(axis);
-       }
+       var controls = new THREE.OrbitControls(camera);
        
-       function debugDraw()
-       {
-         render();
-       }
-       
+       var axis = new THREE.AxisHelper(400);
+       scene.add(axis);
+     
        var pointLight = new THREE.PointLight(0xff0000, 2, 1500);
        pointLight.position.set(30, 30, 175);
        pointLightHelper = new THREE.PointLightHelper(pointLight, 2);
@@ -103,7 +93,8 @@
        
        var render = function(){
          requestAnimationFrame(render);
-        initDebugMode();
+         
+         controls.update(); 
          
          mesh.rotation.x += 0.005;
          mesh.rotation.y += 0.005;
