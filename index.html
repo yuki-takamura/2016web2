@@ -15,7 +15,7 @@
   
   <body>
      <script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r81/three.min.js"></script>
-     <script type ="text/javascript" src = "Stats.js"></script>
+     <script src = "Stats.js"></script>
      <script type ="text/javascript">
     
        var scene = new THREE.Scene();
@@ -32,16 +32,16 @@
        //ground.rotation.x = Math.PI / -2;
        //scene.add(ground);
        
+       var renderer = new THREE.WebGLRenderer();
+       renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+       document.body.appendChild(renderer.domElement);
+       
        var stats;
        stats = new Stats();
        stats.domElement.style.position = 'absolute';
        stats.domElement.style.top = '0px';
        stats.domElement.style.zIndex = 100;
        document.body.appendChild(stats.domElement);
-       
-       var renderer = new THREE.WebGLRenderer();
-       renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
-       document.body.appendChild(renderer.domElement);
        
        //var controls = new THREE.OrbitControls(camera);
        
