@@ -72,7 +72,7 @@
          map:loader.load('texture.png')});
        var mesh = new THREE.Mesh(geometry,material);
        scene.add(mesh);
-       
+       scene.fog = new THREE.FoxExp2(0xffffff, 0.015);
        camera.position.z = 5;
        
        var render = function(){
