@@ -41,9 +41,7 @@
          camera control = new THREE.OrbitControls(camera,canvas);
          axis = new THREE.AxisHelper(500);
          axis.position.set(0,0,0);
-         scene.add(_axis);
-         
-         debugDraw();
+         scene.add(axis);
        }
        
        function debugDraw()
@@ -105,7 +103,8 @@
        
        var render = function(){
          requestAnimationFrame(render);
-        
+        initDebugMode();
+         
          mesh.rotation.x += 0.005;
          mesh.rotation.y += 0.005;
          mesh.rotation.Z += 0.005;
