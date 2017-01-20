@@ -22,16 +22,6 @@
         //scene.fog = new THREE.FoxExp2(0x000000, 0.015);
        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight , 0.1, 10000);
        
-       //var geometry = new THREE.PlaneGeometry(150,150,64,64);
-       //var map1 = THREE.ImageUtiles.loadTexture('texture.png');
-       //ground = new THREE.Mesh(
-         //geometry,
-        // new THREE.MeshLambertMaterial({map:map1})
-//);
-       
-       //ground.rotation.x = Math.PI / -2;
-       //scene.add(ground);
-       
        var renderer = new THREE.WebGLRenderer();
        renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
        document.body.appendChild(renderer.domElement);
@@ -111,8 +101,6 @@
          
          camera.position.x = 2 *Math.sin(mesh.rotation.x);
          camera.position.y = 2 *Math.cos(mesh.rotation.x);
-         
-         stats.update();
          
          renderer.render(scene,camera);
        };
