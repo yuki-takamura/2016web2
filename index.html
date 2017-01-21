@@ -19,7 +19,6 @@
     
        var scene = new THREE.Scene();
        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight , 0.1, 10000);
-
        
        var renderer = new THREE.WebGLRenderer();
        renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
@@ -74,7 +73,6 @@
        var render = function(){
          requestAnimationFrame(render);
          
-         
          mesh.rotation.x += 0.005;
          mesh.rotation.y += 0.005;
          mesh.rotation.Z += 0.005;
@@ -88,6 +86,7 @@
        render();
     </script>
     
+    <h2>ソースコード</h2>
     <pre><code>
        var scene = new THREE.Scene();
        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight , 0.1, 10000);
